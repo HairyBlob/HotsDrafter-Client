@@ -30,6 +30,10 @@
 *.sql
 *.sqlite
 
+target\*
+*.csv
+nb*.xml
+
 # OS generated files #
 ######################
 .DS_Store*
