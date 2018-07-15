@@ -16,23 +16,23 @@
         <ComboBox fx:id="map" layoutX="118.0" layoutY="85.0" prefWidth="150.0" />
         <Button fx:id="rechercher" layoutX="20.0" layoutY="639.0" onAction="#search" text="Rechercher" />
         <Label fx:id="labelA" layoutX="23.0" layoutY="160.0" minHeight="16" minWidth="69" text="Équipe A" /><Label fx:id="labelB" layoutX="231.0" layoutY="160.0" text="Équipe B" />
-         <ComboBox fx:id="ban1A" layoutX="23.0" layoutY="186.0" prefWidth="150.0" style="-fx-border-color: grey;" />
-             <ComboBox fx:id="ban1B" layoutX="231.0" layoutY="194.0" prefWidth="150.0" style="-fx-border-color: grey;" />
+         <ComboBox fx:id="ban1A" layoutX="23.0" layoutY="239.0" prefWidth="150.0" style="-fx-border-color: grey;" />
+             <ComboBox fx:id="ban1B" layoutX="231.0" layoutY="247.0" prefWidth="150.0" style="-fx-border-color: grey;" />
            
-         <ComboBox fx:id="draft1A" layoutX="23.0" layoutY="236.0" prefWidth="150.0" style="-fx-border-color: blue;" />
-            <ComboBox fx:id="draft1B" layoutX="231.0" layoutY="245.0" prefWidth="150.0" style="-fx-border-color: red;" /> 
-            <ComboBox fx:id="draft2B" layoutX="231.0" layoutY="276.0" prefWidth="150.0" style="-fx-border-color: red;" />
-        <ComboBox fx:id="draft2A" layoutX="23.0" layoutY="292.0" prefWidth="150.0" style="-fx-border-color: blue;" />
-        <ComboBox fx:id="draft3A" layoutX="23.0" layoutY="323.0" prefWidth="150.0" style="-fx-border-color: blue;" />
+         <ComboBox fx:id="draft1A" layoutX="23.0" layoutY="289.0" prefWidth="150.0" style="-fx-border-color: blue;" />
+            <ComboBox fx:id="draft1B" layoutX="231.0" layoutY="298.0" prefWidth="150.0" style="-fx-border-color: red;" /> 
+            <ComboBox fx:id="draft2B" layoutX="231.0" layoutY="329.0" prefWidth="150.0" style="-fx-border-color: red;" />
+        <ComboBox fx:id="draft2A" layoutX="23.0" layoutY="345.0" prefWidth="150.0" style="-fx-border-color: blue;" />
+        <ComboBox fx:id="draft3A" layoutX="23.0" layoutY="376.0" prefWidth="150.0" style="-fx-border-color: blue;" />
       
-        <ComboBox fx:id="ban2B" layoutX="231.0" layoutY="347.0" prefWidth="150.0" style="-fx-border-color: grey;" />
-            <ComboBox fx:id="ban2A" layoutX="23.0" layoutY="384.0" prefWidth="150.0" style="-fx-border-color: grey;" />
+        <ComboBox fx:id="ban2B" layoutX="231.0" layoutY="400.0" prefWidth="150.0" style="-fx-border-color: grey;" />
+            <ComboBox fx:id="ban2A" layoutX="23.0" layoutY="437.0" prefWidth="150.0" style="-fx-border-color: grey;" />
         
-            <ComboBox fx:id="draft3B" layoutX="231.0" layoutY="393.0" prefWidth="150.0" style="-fx-border-color: red;" />
-            <ComboBox fx:id="draft4B" layoutX="231.0" layoutY="424.0" prefWidth="150.0" style="-fx-border-color: red;" />
-        <ComboBox fx:id="draft4A" layoutX="23.0" layoutY="441.0" prefWidth="150.0" style="-fx-border-color: blue;" />
-        <ComboBox fx:id="draft5A" layoutX="23.0" layoutY="472.0" prefWidth="150.0" style="-fx-border-color: blue;" />
-            <ComboBox fx:id="draft5B" layoutX="231.0" layoutY="485.0" prefWidth="150.0" style="-fx-border-color: red;" />
+            <ComboBox fx:id="draft3B" layoutX="231.0" layoutY="446.0" prefWidth="150.0" style="-fx-border-color: red;" />
+            <ComboBox fx:id="draft4B" layoutX="231.0" layoutY="477.0" prefWidth="150.0" style="-fx-border-color: red;" />
+        <ComboBox fx:id="draft4A" layoutX="23.0" layoutY="494.0" prefWidth="150.0" style="-fx-border-color: blue;" />
+        <ComboBox fx:id="draft5A" layoutX="23.0" layoutY="525.0" prefWidth="150.0" style="-fx-border-color: blue;" />
+            <ComboBox fx:id="draft5B" layoutX="231.0" layoutY="538.0" prefWidth="150.0" style="-fx-border-color: red;" />
 
         <Button fx:id="reinit" layoutX="158.0" layoutY="639.0" mnemonicParsing="false" onAction="#reinit" text="Réinitialiser" />
        
@@ -112,14 +112,16 @@
         </TableView>
 
         <Button fx:id="quitter" layoutX="311.0" layoutY="639.0" mnemonicParsing="false" onAction="#quit" text="Quitter" />
-        <CheckBox fx:id="powA" layoutX="23.0" layoutY="565.0" mnemonicParsing="false" text="POW A" />
-      <CheckBox fx:id="powB" layoutX="231.0" layoutY="563.0" mnemonicParsing="false" text="POW B" />
+        <CheckBox fx:id="powA" layoutX="20.0" layoutY="586.0" mnemonicParsing="false" text="POW A" />
+      <CheckBox fx:id="powB" layoutX="231.0" layoutY="586.0" mnemonicParsing="false" text="POW B" />
       <Label layoutX="202.0" layoutY="7.0" prefHeight="49.0" prefWidth="246.0" text="HotsDrafter 1.0">
          <font>
             <Font size="33.0" />
          </font>
       </Label>
-      <Button fx:id="switch" layoutX="184.0" layoutY="310.0" mnemonicParsing="false" onAction="#switchTeams" text="&lt;&gt;" />
+      <Button fx:id="switch" layoutX="184.0" layoutY="363.0" mnemonicParsing="false" onAction="#switchTeams" text="&lt;&gt;" />
+      <ComboBox fx:id="ban0B" layoutX="231.0" layoutY="206.0" prefWidth="150.0" style="-fx-border-color: grey;" />
+      <ComboBox fx:id="ban0A" layoutX="23.0" layoutY="198.0" prefWidth="150.0" style="-fx-border-color: grey;" />
      
     </children>
 </AnchorPane>

@@ -62,6 +62,10 @@ public class FXMLClient implements Initializable {
     @FXML
     private Label labelB;
     @FXML
+    private ComboBox ban0A;
+    @FXML
+    private ComboBox ban0B;
+    @FXML
     private ComboBox ban1A;
     @FXML
     private ComboBox ban1B;
@@ -92,6 +96,8 @@ public class FXMLClient implements Initializable {
 
     @FXML
     private void reinit(ActionEvent event) {
+        ban0A.getSelectionModel().clearSelection();
+        ban0B.getSelectionModel().clearSelection();
         ban1A.getSelectionModel().clearSelection();
         ban1B.getSelectionModel().clearSelection();
         draft1A.getSelectionModel().clearSelection();
@@ -114,6 +120,8 @@ public class FXMLClient implements Initializable {
         if (!teamAIsLeft) {
             labelA.setTranslateX(208);
             labelB.setTranslateX(-208);
+            ban0A.setTranslateX(208);
+            ban0B.setTranslateX(-208);
             ban1A.setTranslateX(208);
             ban1B.setTranslateX(-208);
             draft1A.setTranslateX(208);
@@ -134,6 +142,8 @@ public class FXMLClient implements Initializable {
         } else {
             labelA.setTranslateX(0);
             labelB.setTranslateX(-0);
+            ban0A.setTranslateX(0);
+            ban0B.setTranslateX(-0);
             ban1A.setTranslateX(0);
             ban1B.setTranslateX(-0);
             draft1A.setTranslateX(0);
@@ -201,7 +211,8 @@ public class FXMLClient implements Initializable {
         List<String> heroesList = FXCollections.observableList(Arrays.asList(Hero.heroes.clone()));
         
         Collections.sort(heroesList, (String o1, String o2) -> o1.compareTo(o2));
-
+        initPopup(ban0A, heroesList);
+        initPopup(ban0B, heroesList);
         initPopup(ban1A, heroesList);
         initPopup(ban1B, heroesList);
         initPopup(draft1A, heroesList);
@@ -333,6 +344,8 @@ public class FXMLClient implements Initializable {
     com.neogens.hotsdrafter.SequenceState getUserChoices() {
         List<String> heroesList = Arrays.asList(Hero.heroes);
         return new SequenceState(tree, new int[]{
+            heroesList.indexOf(ban0A.getValue()), // BanA    
+            heroesList.indexOf(ban0B.getValue()), // BanB
             heroesList.indexOf(ban1A.getValue()), // BanA    
             heroesList.indexOf(ban1B.getValue()), // BanB
             heroesList.indexOf(draft1A.getValue()), // DraftA

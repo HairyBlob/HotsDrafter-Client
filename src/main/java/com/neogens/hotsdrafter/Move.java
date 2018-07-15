@@ -10,7 +10,7 @@ class Move {
     static final int BanTeamA= 2; 
     static final int BanTeamB= 3;
 
-    static final int[] sequence={BanTeamA,BanTeamB,DraftTeamA,DraftTeamB,DraftTeamB,DraftTeamA,DraftTeamA,BanTeamB,BanTeamA,DraftTeamB,DraftTeamB,DraftTeamA,DraftTeamA,DraftTeamB};
+    static final int[] sequence={BanTeamA,BanTeamB,BanTeamA,BanTeamB,DraftTeamA,DraftTeamB,DraftTeamB,DraftTeamA,DraftTeamA,BanTeamB,BanTeamA,DraftTeamB,DraftTeamB,DraftTeamA,DraftTeamA,DraftTeamB};
     static final String[] sequenceDesc = {"A","B","A X","B X"};
 
     static int team(int sequence) {

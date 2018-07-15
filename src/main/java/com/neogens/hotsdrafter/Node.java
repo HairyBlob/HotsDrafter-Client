@@ -53,7 +53,7 @@ public abstract class Node {
     }
   
      boolean search(SequenceState targetState) {
-         return search(targetState,13);
+         return search(targetState,targetState.moves.length-1);
      }
     boolean search(SequenceState targetState, int targetLevel) {
         if (explored) {

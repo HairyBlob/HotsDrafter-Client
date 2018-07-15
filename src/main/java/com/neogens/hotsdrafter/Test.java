@@ -13,6 +13,8 @@ public class Test {
         int[] moves = new int[]{
             Hero.OPEN, // BanA    
             Hero.OPEN, // BanB
+            Hero.OPEN, // BanA    
+            Hero.OPEN, // BanB
             Hero.OPEN, // DraftA
             Hero.OPEN, Hero.OPEN, //DraftB
             Hero.OPEN, Hero.OPEN, // DraftA
@@ -29,8 +31,8 @@ public class Test {
             System.out.println(Hero.heroes[move]);
         }
         System.out.print("Eval:");
-        System.out.println(s.getEval4TeamA(Maps.BRAXIS, new int[]{moves[2], moves[5], moves[6], moves[11], moves[12]},
-                new int[]{moves[3], moves[4], moves[6], moves[10], moves[13]}));
+        System.out.println(s.getEval4TeamA(Maps.BRAXIS, new int[]{moves[4], moves[7], moves[8], moves[13], moves[14]},
+                new int[]{moves[5], moves[6], moves[8], moves[12], moves[15]}));
     }
 
 }

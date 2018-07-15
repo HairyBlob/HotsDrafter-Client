@@ -55,69 +55,32 @@ public class DraftTree {
     public SequenceState getSimulation(SequenceState userState) {
 
          SequenceState trialState;
-         
-        if (userState.moves[0] == Hero.OPEN) {
-            trialState = new SequenceState(this, userState);
-            root.search(trialState, 3);
-
-            //userState.moves[0] = trialState.moves[3];
-            userState.moves[0] = getBan(trialState,3);
-
-            userState.justification.put(userState.moves[0], trialState.justification.get(trialState.moves[3]));
-
-            userState.taken[userState.moves[0]] = true;
-
-
-        } else {
-            userState.taken[userState.moves[0]] = true;
-        }
-
-        if (userState.moves[1] == Hero.OPEN) {
-            trialState = new SequenceState(this, userState);
-            root.search(trialState, 2);
-            //userState.moves[1] = trialState.moves[2];
-            userState.moves[1] = getBan(trialState,2);
-
-            userState.justification.put(userState.moves[1], trialState.justification.get(trialState.moves[2]));
-            userState.taken[userState.moves[1]] = true;
-
-        } else {
-            userState.taken[userState.moves[1]] = true;
-        }
-
-        if (userState.moves[7] == Hero.OPEN) {
-            trialState = new SequenceState(this, userState);
-            root.search(trialState, 11);
-            //  userState.moves[7] = trialState.moves[11];
-            userState.moves[7] = getBan(trialState,11);
-
-            userState.justification.put(userState.moves[7], trialState.justification.get(trialState.moves[11]));
-            userState.taken[userState.moves[7]] = true;
-
-
-        } else {
-            userState.taken[userState.moves[7]] = true;
-        }
-
-        if (userState.moves[8] == Hero.OPEN) {
-            trialState = new SequenceState(this, userState);
-            root.search(trialState, 9);
-            // userState.moves[8] = trialState.moves[9]; 
-            userState.moves[8] = getBan(trialState,9);
-
-            userState.justification.put(userState.moves[8], trialState.justification.get(trialState.moves[9]));
-            userState.taken[userState.moves[8]] = true;
-
-        } else {
-            userState.taken[userState.moves[8]] = true;
-
-        }
+         trialState = new SequenceState(this, userState);
+          
+         searchBan(0,5,userState,trialState);
+         searchBan(1,4,userState,trialState);
+         searchBan(2,5,userState,trialState);
+         searchBan(3,4,userState,trialState);
+         searchBan(9,13,userState,trialState);
+         searchBan(10,11,userState,trialState);
+           
         trialState = new SequenceState(this, userState);
         root.search(trialState);
         return trialState;
 
     }
     
+    void searchBan(int ban, int banTarget, SequenceState userState,SequenceState trialState){
+          if (userState.moves[ban] == Hero.OPEN) {
+            trialState = new SequenceState(this, userState);
+            root.search(trialState, banTarget);
+            userState.moves[ban] = getBan(trialState,banTarget);
+            userState.justification.put(userState.moves[ban], trialState.justification.get(trialState.moves[banTarget]));
+            userState.taken[userState.moves[ban]] = true;
+        } else {
+            userState.taken[userState.moves[ban]] = true;
+        }
+    }
     int getBan(SequenceState trialState,int level) {
         int[] moves = new int[trialState.moves.length];
         for (int i = 0; i < moves.length; i++) {
